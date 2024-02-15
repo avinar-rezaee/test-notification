@@ -3,12 +3,12 @@
   "name": "My Awesome App",
   "icons": [
     {
-      "src": "icon/lowres.webp",
+      "src": "/sample.png",
       "sizes": "48x48",
-      "type": "image/webp"
+      "type": "image/png"
     },
     {
-      "src": "icon/hd_highres.png",
+      "src": "/sample.png",
       "sizes": "192x192",
       "type": "image/png"
     }
