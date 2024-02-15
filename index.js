@@ -14,6 +14,14 @@ if ("serviceWorker" in navigator) {
         })
     })
 
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register("/worker.js", {
+            scope: "/"
+        })
+            .then(registration => console.log('SW registered: ', registration))
+            .catch(registrationError => console.log('SW registration failed: ', registrationError));
+    });
+
 }
 
 const socket = io("https://u.darbast.app/members", {
@@ -36,9 +44,7 @@ async function send() {
     console.log("Registering service worker...");
     document.querySelector('#logs').append("Registering service worker...")
     document.querySelector('#logs').append(document.createElement('br'))
-    navigator.serviceWorker.register("/worker.js", {
-        scope: "/"
-    });
+
     // const register = await navigator.serviceWorker.register("/worker.js", {
     //     scope: "/"
     // });
@@ -126,3 +132,15 @@ function urlBase64ToUint8Array(base64String) {
 document.querySelector('#btn').addEventListener('click', e => {
     socket.emit('test_notification', {});
 })
+
+document.querySelector('#btn-add-to-homescreen').addEventListener('click', (e) => {
+    deferredPrompt.prompt(); // Show the install prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+        } else {
+            console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+    });
+});
