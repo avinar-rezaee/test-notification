@@ -1,0 +1,13 @@
+{
+    "short_name": "Document",
+    "name": "Document",
+    "icons": [],
+    "id": "/",
+    "start_url": "/",
+    "background_color": "#65ff00",
+    "display": "standalone",
+    "scope": "/",
+    "scope_url": "/",
+    "theme_color": "#65ff00",
+    "description": "Document notif"
+}
