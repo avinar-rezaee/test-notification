@@ -1,13 +1,21 @@
 {
-    "short_name": "Document",
-    "name": "Document",
-    "icons": [],
-    "id": "/",
-    "start_url": "/",
-    "background_color": "#65ff00",
-    "display": "standalone",
-    "scope": "/",
-    "scope_url": "/",
-    "theme_color": "#65ff00",
-    "description": "Document notif"
+  "short_name": "App",
+  "name": "My Awesome App",
+  "icons": [
+    {
+      "src": "icon/lowres.webp",
+      "sizes": "48x48",
+      "type": "image/webp"
+    },
+    {
+      "src": "icon/hd_highres.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FFFFFF"
 }
