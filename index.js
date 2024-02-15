@@ -135,9 +135,10 @@ document.querySelector('#btn').addEventListener('click', e => {
 
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault(); // Prevent the mini-infobar from appearing on mobile
-    deferredPrompt = e; // Save the event so it can be triggered later.
+    // e.preventDefault(); // Prevent the mini-infobar from appearing on mobile
+    // deferredPrompt = e; // Save the event so it can be triggered later.
     // Update UI to notify the user they can add to the home screen
+    e.prompt();
 });
 document.querySelector('#btn-add-to-homescreen').addEventListener('click', (e) => {
     deferredPrompt.prompt(); // Show the install prompt
