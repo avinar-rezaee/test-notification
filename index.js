@@ -1,4 +1,4 @@
-const publicVapidKey = 'BAaUEZYHqpOmTtWYhLHQdzLbYoTNu4sVq1gGeLSbHrwnda4GideCzwEwNlscd27y0wIowaJAUfr3a7hRcTGSF1c'
+const publicVapidKey = 'BPYVpcC9ihPlKnl5Jn4_vewLx6II7CjjoQeb3AbhaysVjwtHv3Pddf2cLb-wNx6ltVt8XPHASWKJP13zKn74Zao'
 
 if ("serviceWorker" in navigator) {
 
