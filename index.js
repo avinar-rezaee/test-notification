@@ -45,6 +45,7 @@ socket.on("connect_error", (e) => {
     console.log({ e });
     console.log(socket);
     console.log(Object.getOwnPropertyDescriptors(e));
+    console.log(Object.getOwnPropertyNames(e));
 });
 
 socket.on("disconnect", () => {
