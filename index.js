@@ -41,6 +41,10 @@ socket.on("connect", () => {
 
 })
 
+socket.on("disconnect", () => {
+    console.log(socket.connected); // false
+});
+
 socket.io.on("error", (error) => {
     // ...
     console.log(error);
