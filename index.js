@@ -26,7 +26,7 @@ if ("serviceWorker" in navigator) {
 
 const socket = io("https://u.darbast.app/members", {
     query: {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODk3NzI1OTYsIm1lbWJlcl9pbmZvIjp7Il9pZCI6IjY0YjdlMjM0MWYyMTEwNDIxZTk5MmYxNyJ9LCJleHAiOjE3MjEzMDg1OTYsImlzcyI6Imh0dHBzOi8vdS5kYXJiYXN0LmFwcCJ9.HbS3G9QHFbP0aBsHRPlsLG6yBwtyGqUoZtEHdciEoc0"
+        // "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODk3NzI1OTYsIm1lbWJlcl9pbmZvIjp7Il9pZCI6IjY0YjdlMjM0MWYyMTEwNDIxZTk5MmYxNyJ9LCJleHAiOjE3MjEzMDg1OTYsImlzcyI6Imh0dHBzOi8vdS5kYXJiYXN0LmFwcCJ9.HbS3G9QHFbP0aBsHRPlsLG6yBwtyGqUoZtEHdciEoc0"
     },
     transports: ["websocket"]
 });
@@ -34,6 +34,10 @@ const socket = io("https://u.darbast.app/members", {
 socket.on("connect", () => {
     const engine = socket.io.engine;
     console.log(engine.transport.name);
+
+    engine.on("close", (reason) => {
+        console.log({ reason });
+    });
 
 })
 
