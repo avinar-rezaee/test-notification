@@ -31,6 +31,12 @@ const socket = io("https://u.darbast.app/members", {
     transports: ["websocket"]
 });
 
+socket.on("connect", () => {
+    const engine = socket.io.engine;
+    console.log(engine.transport.name);
+
+})
+
 socket.io.on("error", (error) => {
     // ...
     console.log(error);
