@@ -41,8 +41,10 @@ socket.on("connect", () => {
 
 });
 
-socket.on("connect_error", () => {
+socket.on("connect_error", (e) => {
+    console.log({ e });
     console.log(socket);
+    console.log(Object.getOwnPropertyDescriptors(e));
 });
 
 socket.on("disconnect", () => {
