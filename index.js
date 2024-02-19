@@ -39,7 +39,11 @@ socket.on("connect", () => {
         console.log({ reason });
     });
 
-})
+});
+
+socket.on("connect_error", () => {
+    console.log(socket);
+});
 
 socket.on("disconnect", () => {
     console.log(socket.connected); // false
